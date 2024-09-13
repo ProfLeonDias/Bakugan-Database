@@ -197,6 +197,7 @@ nav li:first-child{
     border-width:5px;
     border-style: solid;
     flex-grow:7;
+    align-self:left;
     max-width: 780px;
     height:100%;
     background-color:#d7d8df;
@@ -207,7 +208,6 @@ nav li:first-child{
     padding-left:10px;
     padding-right:10px;
     padding-bottom: 30px;
-    align-self:center;
 }
 
 .icon{
