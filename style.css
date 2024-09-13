@@ -198,6 +198,7 @@ nav li:first-child{
     border-style: solid;
     flex-grow:7;
     align-self:left;
+    align-items: center;
     width:65%;
     height:100%;
     background-color:#d7d8df;
