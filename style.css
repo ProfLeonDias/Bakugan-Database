@@ -181,6 +181,7 @@ nav li:first-child{
     border-width:5px;
     border-style: solid;
     flex-grow:3;
+    width:35%;
     max-width: 420px;
     height:100%;
     background-color:rgb(102, 102, 102);
@@ -196,7 +197,8 @@ nav li:first-child{
     border-width:5px;
     border-style: solid;
     flex-grow:7;
-    align-self:left;
+    align-self:center;
+    width:65%;
     max-width: 780px;
     height:100%;
     background-color:#d7d8df;
