@@ -336,7 +336,7 @@ nav li:first-child{
 
 .FAQscontainer{
     display:block;
-    width:70%;
+    width:90%;
     background-color:#975a5a;
     justify-content: space-between;
     align-self:center;
@@ -361,7 +361,7 @@ nav li:first-child{
 /*Contacts Page*/
 .contactcontainer{
     display:block;
-    width:70%;
+    width:90%;
     background-color:#975a5a;
     justify-content: space-between;
     align-self:center;
@@ -388,7 +388,7 @@ nav li:first-child{
 .partnercontainer{
     display:flex;
     flex-direction: column;
-    width:70%;
+    width:90%;
     background-color:#975a5a;
     justify-content: space-between;
     align-self: center;
