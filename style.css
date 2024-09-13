@@ -173,6 +173,7 @@ nav li:first-child{
     background-color:#975a5a;
     justify-content: space-between;
     align-self:normal;
+    width: 100%;
 }
 
 .item1{
@@ -182,7 +183,7 @@ nav li:first-child{
     border-style: solid;
     flex-grow:3;
     width:35%;
-    max-width: 370px;
+    max-width: 420px;
     height:100%;
     background-color:rgb(102, 102, 102);
     color:white;
@@ -198,7 +199,7 @@ nav li:first-child{
     border-style: solid;
     flex-grow:7;
     width:65%;
-    max-width: 700px;
+    max-width: 780px;
     height:100%;
     background-color:#d7d8df;
     color:black;
