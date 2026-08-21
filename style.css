@@ -20,7 +20,12 @@ body {
     display:flex;
     flex-direction: column;
     color:black;
-    background-color:#975a5a;
+    background-image: url("Images/31-%20Gate%20Back.png");
+    background-color: #2c1f1f;          /* fallback color */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 html, body{
@@ -28,38 +33,73 @@ html, body{
 }
 
 nav{
-    background-color:#7ab5a1;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    background-color:#6da08f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid black;    /* Subtle dark border */
+    position: relative;
 }
 
 nav ul{
-    width:100%;
-    list-style:none;
-    display:flex;
+    width: 100%;
+    list-style: none;
+    display: flex;
     justify-content: flex-end;
-    align-items:center;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0;
+    height: 60px;
 }
 
 nav li{
-    height:50px;
+    height: 100%;
 }
 
 nav a{
-    height:100%;
-    padding: 0 15px;
-    text-decoration:none;
+    height: 100%;
+    padding: 0 18px;
+    text-decoration: none;
     font-weight: 600;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     color:black;
+    font-size: 1.02rem;
+    transition: all 0.2s ease;
+}
+
+.logo-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 100%;
+    padding-right: 15px;
+}
+
+.nav-logo {
+    height: 59px;                    /* Adjust this size as needed */
+    width: auto;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    transition: transform 0.3s ease;
 }
 
 nav a:hover{
     background-color: teal;
+    color: white;
 }
 
 nav li:first-child{
-    margin-right:auto;
+    margin-right: auto;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+}
+
+/* Mobile menu button */
+.menu-button {
+    color: white;
 }
 
 .sidebar{
@@ -101,7 +141,9 @@ nav li:first-child{
     padding: 30px 20px 0px;
     align-items: center;
     text-align: center;
-    margin-top:auto;
+    margin-top: auto;
+    border-top: 2px solid black;    /* Subtle dark border */
+    position: relative;
 }
 
 .mediaicons{
@@ -160,63 +202,159 @@ nav li:first-child{
 }
 
 /*Home Page*/
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                url('Images/15- About.jpg');   /* change filename */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 65px 20px 55px;
+    margin-bottom: 0;                    /* Remove gap */
+    border-bottom: 2px solid black;    /* Subtle dark border */
+    position: relative;
+}
+
+.hero-content {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: clamp(2.3rem, 5.5vw, 3.2rem);
+    margin: 0 0 12px 0;
+    font-weight: 700;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.9);
+}
+
+.hero p {
+    font-size: 1.32rem;
+    margin: 0;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.85);
+    opacity: 0.95;
+}
 
 .container{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    gap:0px;
-    border-style:solid;
-    border-width:5px;
-    border:black;
-    padding:5px;
-    background-color:#975a5a;
-    justify-content: space-between;
-    align-self:normal;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #975a5a;
+    border: 5px solid black;
+    border-radius: 5px;
 }
 
 .item1{
-    border-radius:10px;
-    border:black;
-    border-width:5px;
-    border-style: solid;
-    flex-grow:3;
-    width:35%;
-    max-width: 420px;
-    height:100%;
-    background-color:rgb(102, 102, 102);
-    color:white;
-    text-align:center;
-    padding:0;
-    align-self: normal;
+    border-radius: 10px;
+    border: 6px solid #1a1a1a;
+    background-color:#666666;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 15px 10px;
+    box-sizing: border-box;
+    order: 2;
 }
 
 .item2{
-    border-radius:20px;
-    border:#d7d8df;
-    border-width:5px;
-    border-style: solid;
-    flex-grow:7;
-    align-self:left;
-    width:65%;
-    height:100%;
-    background-color:#d7d8df;
-    color:black;
-    text-align:center;
-    font-size:16px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding-left:10px;
-    padding-right:10px;
-    padding-bottom: 30px;
+    border-radius: 16px;
+    border: 6px solid #9c9c9f;
+    background-color: #D8D8DF;
+    color: #1f1f1f;
+    align-items: center;
+    text-align: center;
+    padding: 18px 20px 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    order: 1;
 }
 
-.item2image{
+.item2image {
+    width: 100%;
+    height: auto;                    /* Good balance - adjust if needed */
+    object-fit: cover;                /* Fills the space nicely */
+    object-position: center 25%;      /* Shows more of the top/center — less cropping of main subjects */
+    border-radius: 12px;
+    margin: 15px auto 25px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-    max-height: 410px;
-    max-width: 685px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.eras-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0 20px 0;
+}
+
+.era-item {
+    margin: 0;
+    padding: 0;
+}
+
+.era-item:hover {
+    border-color: #c8102e;     /* Bakugan red accent on hover */
+    transform: translateY(-3px);
+}
+
+.era-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border: 3px solid black;
+    border-radius: 8px;
+}
+
+.era-item span {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.donate {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.donate p {
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+}
+
+.patreon {
+    height: 41px;
+    width: 185px;
+    border-radius: 6px;
+    border: 2px solid #d7d8df;
+}
+
+/* Global image safety - prevents breaking */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 3px solid black;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.08);
+}
+
+/* Better text spacing */
+.item2 p {
+    line-height: 1.65;
+    margin-bottom: 16px;
 }
 
 .icon{
@@ -237,113 +375,198 @@ nav li:first-child{
     border-style:solid;
 }
 
+@media (min-width: 750px) {
+    .container {
+        flex-direction: row-reverse;
+        gap: 25px;
+    }
+    .item1 {
+        flex: 1 1 32%;
+        max-width: 420px;
+        order: 2;
+    }
+    .item2 {
+        flex: 1 1 68%;
+        order: 1;
+    }
+    .item2image {
+        width: 80%;
+        max-width: 100%;
+        height: auto;                /* Taller on desktop */
+    }
+}
+
+@media (max-width: 600px) {
+    .item1, .item2 {
+        padding: 18px;
+    }
+    
+    .icon {
+        width: 88px;
+        height: 88px;
+    }
+    
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.45rem; }
+}
+
+@media (max-width: 400px) {
+    .icon {
+        width: 82px;
+        height: 82px;
+    }
+}
+
 /*About + BakuDex Page*/
 
 .aboutcontainer{
-    display:block;
-    width:90%;
-    background-color:#975a5a;
-    justify-content: space-between;
-    align-self:center;
-    border-radius:20px;
-    border:#d7d8df;
-    border-width:5px;
-    border-style: solid;
-    color:black;
-    text-wrap:wrap;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin: 40px auto;
+    background-color:#d7d8df;
+    border-radius: 12px;
+    border: 6px solid #9c9c9f;
+    padding: 25px 0;
+    gap: 20px;
 }
 
 .aboutcontainerimg{
-    align-self:center;
-    text-align: center;
-    border-style:solid;
-    border-width:15px;
-    border:#d7d8df;
-    padding:20px;
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 15px;
     background-color:#d7d8df;
-    text-wrap:wrap;
-    height:100%;
-    width:100%;
-    object-fit:contain;
+    border: 8px solid #d7d8df;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutcontainerimg img{
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    object-fit: contain;
 }
 
 .aboutcontainertxt{
-    align-self:center;
-    text-align: justify;
-    color:black;
-    text-wrap:wrap;
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px 30px;
     background-color:#d7d8df;
-    padding-left:10px;
-    padding-right:10px;
-    padding-top:20px;
-    padding-bottom:20px; 
+    color:black;
+    text-align: justify;
+    line-height: 1.7;
+    margin: 0 auto;
+    text-wrap: wrap;
 }
 
 .aboutcontainer2{
-    width:85%;
-    max-width: 1290px;
-    background-color:#975a5a;
-    justify-content:space-between;
-    align-self:center;
+    width:90%;
+    background-color:#d7d8df;
+    border-width: 10px solid #d7d8df;
     border-radius:20px;
-    border:#d7d8df;
-    border-width:5px;
-    border-style:solid;
+    margin: 20px auto;
+    padding: 20px 20px;
+    box-sizing: border-box;
     color:black;
-    text-wrap:wrap;
     text-align:center;
 }
 
 .aboutcontainertxt2{
-    align-self:center;
-    text-align:center;
-    color:black;
-    text-wrap:wrap;
     background-color:#d7d8df;
-    padding-left:10px;
-    padding-right:10px;
-    padding-top:20px;
-    padding-bottom:20px; 
+    padding: 25px 20px;
+    max-width: 1250px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    text-wrap:wrap;
 }
 
 .bakudeximages{
     display: flex;
     flex-direction:row;
     flex-wrap: nowrap;
-    column-gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 12px;
     width: 100%;
-    height: 100%;
-    text-align:center;
-    color:black;
-    text-wrap:wrap;
+    max-width: 1125px;
     background-color:#d7d8df;
-    overflow: auto;
+    padding: 15px 10px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .bakudeximages img{
     width: 100%;
-    width: 250px;
+    max-width: 250px;
     height: 200px;
     object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 8px;
 }
 
 .column{
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 260px;
 }
 
+@media screen and (max-width: 900px) {
+    .bakudeximages {
+        gap: 10px;
+        padding: 8px;
+    }
+    
+    .bakudeximages img {
+        max-width: 210px;
+        height: 170px;
+    }
+    
+    .column {
+        min-width: 190px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .column {
+        min-width: 240px;
+    }
+    
+    .bakudeximages img {
+        max-width: 230px;
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bakudeximages img {
+        max-width: 160px;
+        height: 130px;
+    }
+    
+    .column {
+        min-width: 160px;
+    }
+}
 /*FAQs Page*/
 
 .FAQscontainer{
-    display:block;
-    width: 90%;
-    background-color:#975a5a;
+    display: block;
+    max-width: 80%;
+    background-color:#d7d8df;
     justify-content: space-between;
-    align-self:center;
-    border-radius:20px;
-    border:#d7d8df;
-    border-width:5px;
-    border-style: solid;
+    align-self: center;
+    border-radius: 12px;
+    border: 6px solid #9c9c9f;
+    padding: 25px 0;
+    gap: 20px;
 }
 
 .FAQscontainertxt{
@@ -360,15 +583,13 @@ nav li:first-child{
 
 /*Contacts Page*/
 .contactcontainer{
-    display:block;
-    width:90%;
-    background-color:#975a5a;
+    display: block;
+    max-width: 80%;
+    background-color:#d7d8df;
     justify-content: space-between;
-    align-self:center;
-    border-radius:20px;
-    border:#d7d8df;
-    border-width:5px;
-    border-style: solid;
+    align-self: center;
+    border-radius: 12px;
+    border: 6px solid #9c9c9f;
 }
 
 .contactcontainertxt{
@@ -388,10 +609,12 @@ nav li:first-child{
 .partnercontainer{
     display:flex;
     flex-direction: column;
-    width:90%;
+    max-width: 80%;
     background-color:#975a5a;
     justify-content: space-between;
     align-self: center;
+    border-radius:10px;
+    border: 5px solid black;
 }
 
 .scontainertxt{
@@ -404,9 +627,7 @@ nav li:first-child{
     color:black;
     text-align: center;
     border-radius:10px;
-    border:black;
-    border-width:5px;
-    border-style: solid;
+    border: 5px solid #929296;
 }
 
 .sakuracontainer{
@@ -539,32 +760,141 @@ nav li:first-child{
 /*Gen 1 Pages*/
 
 .container2{
-    display:flex;
-    flex-direction:column;
-    flex-wrap:wrap;
-    gap:0px;
-    border-style:solid;
-    border-width:5px;
-    border:black;
-    padding:5px;
-    background-color:#975a5a;
-    justify-content:space-between;
-    align-self:normal;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
 }
 
 .item3{
-    border-radius:10px;
-    border:black;
-    border-width:5px;
-    border-style: solid;
-    width:100%;
-    height:100%;
-    background-color:rgb(102, 102, 102);
-    color:white;
-    text-align:center;
-    padding:0;
-    align-self: center;
-    align-items:center;
+    background-color: #666666;
+    border: 5px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #e0e0e0;
+    padding: 28px 22px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tablelegend h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Note box */
+.note-box {
+    background-color: #1f1f1f;
+    padding: 18px 24px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.tablelegend p:first-of-type {
+    background-color: #1f1f1f;
+    padding: 18px 24px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    line-height: 1.55;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tablelegendtxt {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.collapsible {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 0 18px 0 !important;
+    box-sizing: border-box;
+}
+
+.collapsible label {
+    width: 100% !important;
+    padding: 16px 24px !important;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 !important;
+    background-color: #3f3f3f;
+    padding: 16px 24px;
+    font-weight: bold;
+    font-size: 1.22rem;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.collapsible label:hover {
+    background-color: #4a4a4a;
+}
+
+.collapsibletxt {
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease, padding 0.3s ease;
+    background-color: #666666;
+    border: 2px solid #555;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 0 26px;
+}
+
+.collapsible input[type="checkbox"]:checked + label + .collapsibletxt {
+    max-height: 5000px;
+    padding: 22px 26px;
+}
+
+.collapsible input[type="checkbox"]:checked + label {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input[type="checkbox"] {
+    display: none !important;
+}
+
+/* Make sure it applies to your collapsible variants */
+.collapsible input,
+.collapsible2 input,
+[type="checkbox"] {
+    display: none !important;
+}
+
+@media screen and (max-width: 750px) {
+.container2 {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+    .item3 {
+        padding: 22px 14px;
+    }
+    .collapsible label {
+        padding: 15px 20px;
+        font-size: 1.13rem;
+    }
+    .collapsibletxt {
+        padding: 0 20px !important;
+    }
+    .collapsible input[type="checkbox"]:checked + label + .collapsibletxt {
+        padding: 20px 22px !important;
+    }
 }
 
 .item4{
@@ -572,8 +902,8 @@ nav li:first-child{
     border:#d7d8df;
     border-width:5px;
     border-style: solid;
-    width:90%;
-    height:100%;
+    width: 95%;
+    height: 100%;
     background-color:#d7d8df;
     color:black;
     text-align:left;
@@ -626,7 +956,7 @@ nav li:first-child{
     color:white;
 }
 
-.tablelegend{
+.tablelegend2{
     width:100%;
     height:100%;
     position:relative;
@@ -639,13 +969,13 @@ nav li:first-child{
     padding-bottom: 30px;
 }
 
-.tablelegendtxt{
+.tablelegend2txt{
     text-align:left;
     font-size:16px;
     color:white;
 }
 
-.collapsible{
+.collapsible2{
     width:100%;
     height:100%;
     overflow:visible;
@@ -657,11 +987,11 @@ nav li:first-child{
     padding-right:15%;
 }
 
-.collapsible input{
+.collapsible2 input{
     display:none;
 }
 
-.collapsible label{
+.collapsible2 label{
     position:static;
     background:rgb(82, 81, 81);
     color:white;
@@ -678,7 +1008,7 @@ nav li:first-child{
     align-self: center;
 }
 
-.collapsible label:after{
+.collapsible2 label:after{
     content:"";
     position:absolute;
     right:15px;
@@ -689,7 +1019,7 @@ nav li:first-child{
     transition: all 0.3s ease;
 }
 
-.collapsibletxt{
+.collapsible2txt{
     max-height:1px;
     overflow:hidden;
     border-radius:4px;
@@ -705,7 +1035,7 @@ nav li:first-child{
     padding-right:15px;
 }
 
-.collapsible input:checked ~ .collapsibletxt{
+.collapsible2 input:checked ~ .collapsible2txt{
     max-height:100%;
     padding-bottom:15px;
     background:rgb(102, 102, 102);
@@ -730,7 +1060,9 @@ nav li:first-child{
     flex-direction: column;
     flex-wrap:nowrap;
     width:25%;
-    padding-top: 15px;
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
     align-items: center;
     vertical-align:middle;
 }
@@ -741,6 +1073,7 @@ nav li:first-child{
     flex-wrap:nowrap;
     overflow:auto;
     width:75%;
+    max-width: 900px;
 }
 
 .prevcontainer3{
@@ -753,7 +1086,10 @@ nav li:first-child{
 }
 
 .image-left{
-    width:80%;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    max-height: 400px;
     float:left;
     flex-wrap:wrap;
     flex-direction: column;
@@ -766,28 +1102,33 @@ nav li:first-child{
 
 .image-left img{
     width:100%;
-    height:100%;
+    height: auto;
     object-fit:contain;
 }
 
 .bakucontainer{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    overflow:auto;
-    padding-top:10px;
-    padding-bottom:10px;
+    max-width: 850px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #d7d8df;
 }
 
-.tablecontainer{
-    float:right;
-    padding-right:5px;
-    height:100%;
-    width:50%;
-    display:flex;
-    flex-direction:column;
-    padding-top:20px;
-    padding-bottom:20px;
+.table-container{
+    float: right;
+    padding-right: 5px;
+    height: 100%;
+    min-width: 50%;
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    width: fit-content;
+    margin: 0;
 }
 
 .row2{
@@ -822,23 +1163,25 @@ nav li:first-child{
     flex-direction: column;
     align-items: center;
     text-align: left;
+    overflow-x: auto;
+    width: 100%;
 }
 
 #revealedImage1, #revealedImage2, #revealedImage3, #revealedImage4, #revealedImage5, #revealedImage6, #revealedImage7, #revealedImage8, #revealedImage9, #revealedImage10, #revealedImage11, #revealedImage12, #revealedImage13, #revealedImage14, #revealedImage15, #revealedImage16, #revealedImage17, #revealedImage18, #revealedImage19, #revealedImage20, #revealedImage21, #revealedImage22, #revealedImage23, #revealedImage24, #revealedImage25, #revealedImage26, #revealedImage27, #revealedImage28, #revealedImage29, #revealedImage30, #revealedImage31, #revealedImage32, #revealedImage33, #revealedImage34, #revealedImage35, #revealedImage36, #revealedImage37, #revealedImage38, #revealedImage39, #revealedImage40, #revealedImage41, #revealedImage42, #revealedImage43,#revealedImage44, #revealedImage45, #revealedImage46, #revealedImage47, #revealedImage48, #revealedImage49, #revealedImage50, #revealedImage51, #revealedImage52, #revealedImage53, #revealedImage54, #revealedImage55, #revealedImage56, #revealedImage57, #revealedImage58, #revealedImage59, #revealedImage60, #revealedImage61, #revealedImage62, #revealedImage63, #revealedImage64, #revealedImage65, #revealedImage66, #revealedImage67, #revealedImage68, #revealedImage69, #revealedImage70, #revealedImage71, #revealedImage72, #revealedImage73, #revealedImage74, #revealedImage75, #revealedImage76, #revealedImage77, #revealedImage78, #revealedImage79, #revealedImage80, #revealedImage81, #revealedImage82, #revealedImage83, #revealedImage84, #revealedImage85, #revealedImage86, #revealedImage87, #revealedImage88, #revealedImage89, #revealedImage90, #revealedImage91, #revealedImage92, #revealedImage93, #revealedImage94, #revealedImage95, #revealedImage96, #revealedImage97, #revealedImage98, #revealedImage99, #revealedImage100, #revealedImage101, #revealedImage102, #revealedImage103, #revealedImage104, #revealedImage105, #revealedImage106, #revealedImage107, #revealedImage108, #revealedImage109, #revealedImage110, #revealedImage111, #revealedImage112, #revealedImage113, #revealedImage114, #revealedImage115, #revealedImage116, #revealedImage117, #revealedImage118, #revealedImage119, #revealedImage120, #revealedImage121, #revealedImage122, #revealedImage123, #revealedImage124, #revealedImage125, #revealedImage126, #revealedImage127, #revealedImage128, #revealedImage129, #revealedImage130, #revealedImage131, #revealedImage132, #revealedImage133, #revealedImage134, #revealedImage135, #revealedImage136, #revealedImage137, #revealedImage138, #revealedImage139, #revealedImage140, #revealedImage141, #revealedImage142, #revealedImage143, #revealedImage144, #revealedImage145, #revealedImage146, #revealedImage147, #revealedImage148, #revealedImage149, #revealedImage150, #revealedImage151, #revealedImage152, #revealedImage153, #revealedImage154, #revealedImage155, #revealedImage156, #revealedImage157, #revealedImage158, #revealedImage159, #revealedImage160, #revealedImage161, #revealedImage162, #revealedImage163, #revealedImage164, #revealedImage165, #revealedImage166, #revealedImage167, #revealedImage168, #revealedImage169, #revealedImage170, #revealedImage171, #revealedImage172, #revealedImage173, #revealedImage174, #revealedImage175, #revealedImage176, #revealedImage177, #revealedImage178, #revealedImage179, #revealedImage180, #revealedImage181, #revealedImage182, #revealedImage183, #revealedImage184, #revealedImage185, #revealedImage186, #revealedImage187, #revealedImage188, #revealedImage189, #revealedImage190, #revealedImage191, #revealedImage192, #revealedImage193, #revealedImage194, #revealedImage195, #revealedImage196, #revealedImage197, #revealedImage198, #revealedImage199, #revealedImage200, #revealedImage200, #revealedImage201, #revealedImage202, #revealedImage203, #revealedImage204, #revealedImage205, #revealedImage206, #revealedImage207, #revealedImage208, #revealedImage209, #revealedImage210, #revealedImage211, #revealedImage212, #revealedImage213, #revealedImage214, #revealedImage215, #revealedImage216, #revealedImage217, #revealedImage218, #revealedImage219, #revealedImage220, #revealedImage221, #revealedImage222, #revealedImage223, #revealedImage224, #revealedImage225, #revealedImage226, #revealedImage227, #revealedImage228, #revealedImage229, #revealedImage230, #revealedImage231, #revealedImage232, #revealedImage233, #revealedImage234, #revealedImage235, #revealedImage236, #revealedImage237, #revealedImage238, #revealedImage239, #revealedImage240, #revealedImage241, #revealedImage242, #revealedImage243, #revealedImage244, #revealedImage245, #revealedImage246, #revealedImage247, #revealedImage248, #revealedImage249, #revealedImage250, #revealedImage251, #revealedImage252, #revealedImage253, #revealedImage254, #revealedImage255, #revealedImage256, #revealedImage257, #revealedImage258, #revealedImage259, #revealedImage260, #revealedImage261, #revealedImage262, #revealedImage263, #revealedImage264, #revealedImage265, #revealedImage266, #revealedImage267, #revealedImage268, #revealedImage269, #revealedImage270, #revealedImage271, #revealedImage272, #revealedImage273, #revealedImage274, #revealedImage275, #revealedImage276, #revealedImage277, #revealedImage278, #revealedImage279, #revealedImage280, #revealedImage281, #revealedImage282, #revealedImage283, #revealedImage284, #revealedImage285, #revealedImage286, #revealedImage287, #revealedImage288, #revealedImage289, #revealedImage290, #revealedImage291, #revealedImage292, #revealedImage293, #revealedImage294, #revealedImage295, #revealedImage296, #revealedImage297, #revealedImage298, #revealedImage299, #revealedImage300, #revealedImage301, #revealedImage302, #revealedImage303, #revealedImage304, #revealedImage305, #revealedImage306, #revealedImage307, #revealedImage308, #revealedImage309, #revealedImage310, #revealedImage311, #revealedImage312, #revealedImage313, #revealedImage314, #revealedImage315, #revealedImage316, #revealedImage317, #revealedImage318, #revealedImage319, #revealedImage320, #revealedImage321, #revealedImage322, #revealedImage323, #revealedImage324, #revealedImage325, #revealedImage326, #revealedImage327, #revealedImage328, #revealedImage329, #revealedImage330, #revealedImage331, #revealedImage332, #revealedImage333, #revealedImage334, #revealedImage335, #revealedImage336, #revealedImage337, #revealedImage338, #revealedImage339, #revealedImage340, #revealedImage341, #revealedImage342, #revealedImage343, #revealedImage344, #revealedImage345, #revealedImage346, #revealedImage347, #revealedImage348, #revealedImage349, #revealedImage350, #revealedImage351, #revealedImage352, #revealedImage353, #revealedImage354, #revealedImage355, #revealedImage356, #revealedImage357, #revealedImage358, #revealedImage359, #revealedImage360, #revealedImage361, #revealedImage362, #revealedImage363, #revealedImage364, #revealedImage365, #revealedImage366, #revealedImage367, #revealedImage368, #revealedImage369, #revealedImage370, #revealedImage371, #revealedImage372, #revealedImage373, #revealedImage374, #revealedImage375, #revealedImage376, #revealedImage377, #revealedImage378, #revealedImage379, #revealedImage380, #revealedImage381, #revealedImage382, #revealedImage383, #revealedImage384, #revealedImage385, #revealedImage386, #revealedImage387, #revealedImage388, #revealedImage389, #revealedImage390, #revealedImage391, #revealedImage392, #revealedImage393, #revealedImage394, #revealedImage395, #revealedImage396, #revealedImage397, #revealedImage398, #revealedImage399, #revealedImage400, #revealedImage401, #revealedImage402, #revealedImage403, #revealedImage404, #revealedImage405, #revealedImage406, #revealedImage407, #revealedImage408, #revealedImage409, #revealedImage410, #revealedImage411, #revealedImage412, #revealedImage413, #revealedImage414, #revealedImage415, #revealedImage416, #revealedImage417, #revealedImage418, #revealedImage419, #revealedImage420, #revealedImage421, #revealedImage422, #revealedImage423, #revealedImage424, #revealedImage425, #revealedImage426, #revealedImage427, #revealedImage428, #revealedImage429, #revealedImage430, #revealedImage431, #revealedImage432, #revealedImage433, #revealedImage434, #revealedImage435, #revealedImage436, #revealedImage437, #revealedImage438, #revealedImage439, #revealedImage440, #revealedImage441, #revealedImage442, #revealedImage443, #revealedImage444, #revealedImage445 {
-width:350px;
-height: 250px;
-display: none;
-padding-top:5px;
-padding-left:5px;
+    max-width: 400px;
+    max-height: 300px;
+    display: none;
+    padding-top:5px;
+    padding-left:5px;
+    overflow-x: auto;
 }
 
 #imageText1, #imageText2, #imageText3, #imageText4, #imageText5, #imageText6, #imageText7, #imageText8, #imageText9, #imageText10, #imageText11, #imageText12, #imageText13, #imageText14, #imageText15, #imageText16, #imageText17, #imageText18, #imageText19, #imageText20, #imageText21, #imageText22, #imageText23, #imageText24, #imageText25, #imageText26, #imageText27, #imageText28, #imageText29, #imageText30, #imageText31, #imageText32, #imageText33, #imageText34, #imageText35, #imageText36, #imageText37, #imageText38, #imageText39, #imageText40, #imageText41, #imageText42, #imageText43,#imageText44, #imageText45, #imageText46, #imageText47, #imageText48, #imageText49, #imageText50, #imageText51, #imageText52, #imageText53, #imageText54, #imageText55, #imageText56, #imageText57, #imageText58, #imageText59, #imageText60, #imageText61, #imageText62, #imageText63, #imageText64, #imageText65, #imageText66, #imageText67, #imageText68, #imageText69, #imageText70, #imageText71, #imageText72, #imageText73, #imageText74, #imageText75, #imageText76, #imageText77, #imageText78, #imageText79, #imageText80, #imageText81, #imageText82, #imageText83, #imageText84, #imageText85, #imageText86, #imageText87, #imageText88, #imageText89, #imageText90, #imageText91, #imageText92, #imageText93, #imageText94, #imageText95, #imageText96, #imageText97, #imageText98, #imageText99, #imageText100, #imageText101, #imageText102, #imageText103, #imageText104, #imageText105, #imageText106, #imageText107, #imageText108, #imageText109, #imageText110, #imageText111, #imageText112, #imageText113, #imageText114, #imageText115, #imageText116, #imageText117, #imageText118, #imageText119, #imageText120, #imageText121, #imageText122, #imageText123, #imageText124, #imageText125, #imageText126, #imageText127, #imageText128, #imageText129, #imageText130, #imageText131, #imageText132, #imageText133, #imageText134, #imageText135, #imageText136, #imageText137, #imageText138, #imageText139, #imageText140, #imageText141, #imageText142, #imageText143, #imageText144, #imageText145, #imageText146, #imageText147, #imageText148, #imageText149, #imageText150, #imageText151, #imageText152, #imageText153, #imageText154, #imageText155, #imageText156, #imageText157, #imageText158, #imageText159, #imageText160, #imageText161, #imageText162, #imageText163, #imageText164, #imageText165, #imageText166, #imageText167, #imageText168, #imageText169, #imageText170, #imageText171, #imageText172, #imageText173, #imageText174, #imageText175, #imageText176, #imageText177, #imageText178, #imageText179, #imageText180, #imageText181, #imageText182, #imageText183, #imageText184, #imageText185, #imageText186, #imageText187, #imageText188, #imageText189, #imageText190, #imageText191, #imageText192, #imageText193, #imageText194, #imageText195, #imageText196, #imageText197, #imageText198, #imageText199, #imageText200, #imageText200, #imageText201, #imageText202, #imageText203, #imageText204, #imageText205, #imageText206, #imageText207, #imageText208, #imageText209, #imageText210, #imageText211, #imageText212, #imageText213, #imageText214, #imageText215, #imageText216, #imageText217, #imageText218, #imageText219, #imageText220, #imageText221, #imageText222, #imageText223, #imageText224, #imageText225, #imageText226, #imageText227, #imageText228, #imageText229, #imageText230, #imageText231, #imageText232, #imageText233, #imageText234, #imageText235, #imageText236, #imageText237, #imageText238, #imageText239, #imageText240, #imageText241, #imageText242, #imageText243, #imageText244, #imageText245, #imageText246, #imageText247, #imageText248, #imageText249, #imageText250, #imageText251, #imageText252, #imageText253, #imageText254, #imageText255, #imageText256, #imageText257, #imageText258, #imageText259, #imageText260, #imageText261, #imageText262, #imageText263, #imageText264, #imageText265, #imageText266, #imageText267, #imageText268, #imageText269, #imageText270, #imageText271, #imageText272, #imageText273, #imageText274, #imageText275, #imageText276, #imageText277, #imageText278, #imageText279, #imageText280, #imageText281, #imageText282, #imageText283, #imageText284, #imageText285, #imageText286, #imageText287, #imageText288, #imageText289, #imageText290, #imageText291, #imageText292, #imageText293, #imageText294, #imageText295, #imageText296, #imageText297, #imageText298, #imageText299, #imageText300, #imageText301, #imageText302, #imageText303, #imageText304, #imageText305, #imageText306, #imageText307, #imageText308, #imageText309, #imageText310, #imageText311, #imageText312, #imageText313, #imageText314, #imageText315, #imageText316, #imageText317, #imageText318, #imageText319, #imageText320, #imageText321, #imageText322, #imageText323, #imageText324, #imageText325, #imageText326, #imageText327, #imageText328, #imageText329, #imageText330, #imageText331, #imageText332, #imageText333, #imageText334, #imageText335, #imageText336, #imageText337, #imageText338, #imageText339, #imageText340, #imageText341, #imageText342, #imageText343, #imageText344, #imageText345, #imageText346, #imageText347, #imageText348, #imageText349, #imageText350, #imageText351, #imageText352, #imageText353, #imageText354, #imageText355, #imageText356, #imageText357, #imageText358, #imageText359, #imageText360, #imageText361, #imageText362, #imageText363, #imageText364, #imageText365, #imageText366, #imageText367, #imageText368, #imageText369, #imageText370, #imageText371, #imageText372, #imageText373, #imageText374, #imageText375, #imageText376, #imageText377, #imageText378, #imageText379, #imageText380, #imageText381, #imageText382, #imageText383, #imageText384, #imageText385, #imageText386, #imageText387, #imageText388, #imageText389, #imageText390, #imageText391, #imageText392, #imageText393, #imageText394, #imageText395, #imageText396, #imageText397, #imageText398, #imageText399, #imageText400, #imageText401, #imageText402, #imageText403, #imageText404, #imageText405, #imageText406, #imageText407, #imageText408, #imageText409, #imageText410, #imageText411, #imageText412, #imageText413, #imageText414, #imageText415, #imageText416, #imageText417, #imageText418, #imageText419, #imageText420, #imageText421, #imageText422, #imageText423, #imageText424, #imageText425, #imageText426, #imageText427, #imageText428, #imageText429, #imageText430, #imageText431, #imageText432, #imageText433, #imageText434, #imageText435, #imageText436, #imageText437, #imageText438, #imageText439, #imageText440, #imageText441, #imageText442, #imageText443, #imageText444, #imageText445 {
-width: 100%;
-max-width: 350px;
-height: 60%;
-padding: 8px;
-text-align: left;
-overflow:visible;
+    width: 400px;
+    height: 50%;
+    padding: 8px;
+    text-align: left;
+    overflow:visible;
 }
 
 .Type1 {
@@ -885,8 +1228,9 @@ summary {
         border: 3px solid #000;
         border-radius: 5px;
         padding: 2em;
+        
         margin-top:50px;
-        margin-bottom: 45px;
+        margin-bottom: 50px;
         margin-right:5px;
       }
 
@@ -903,10 +1247,9 @@ summary {
     border: 2px solid #3b3737;
     border-radius: 10px;
     padding: 2em;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 0;
-    margin-left: 0;
+    margin: 15px auto;
+    max-width: 1350px;
+    width: 100%;
 }
 
 .type4[open] {
@@ -915,11 +1258,18 @@ summary {
 
 .type4[open] summary {
     margin-bottom: 0.5em;
+    max-width: fit-content;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 12px 40px;
 }
 
 .tg  {
     border-collapse:collapse;
     border-spacing:0;
+    max-width: 420px;
+    width: fit-content;
+    min-width: auto;
     }
 
 .tg td{
@@ -946,16 +1296,18 @@ summary {
     }
 
 .tg .tg-baqh{
-    text-align:center;
-    vertical-align:middle;
-    max-width:140px;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 140px;
+    min-width: 40px;
     }
 
 .tg .tg-amwm{
     font-weight:bold;
     text-align:center;
     vertical-align:top;
-    max-width:150px;
+    max-width: 140px;
+    min-width: 140px;
     text-wrap:wrap;
     vertical-align:middle;
     }
@@ -963,26 +1315,71 @@ summary {
 .tg-amwm{
     background-color:#7ab5a1;
     vertical-align:middle;
+    max-width: 40px;
+    min-width: 40px;
 }
 
 .tg-baqh2{
     background-color: #7ab5a1;
+    align-items: center;
+    max-width: 40px;
+    min-width: 40px;
 }
 
-@media screen and (max-width: 750px) {
-
-.outer-container {
-    overflow: auto;
+.tg-baqh2 img {
+    width: 30px;
+    height: 30px;
+    align-self: center;
 }
 
-.container {
-    width: 100%;
-    height: auto;
+/* Fix for smaller tables (fewer columns) */
+.tg[data-columns="4"],
+.tg[data-columns="3"],
+.table-container:has(.tg th:last-child:nth-child(5)) {
+    max-width: 520px !important;
 }
 
+.table-container:has(.tg) {
+    justify-content: flex-start;
+}
+
+@media (min-width: 700px) {
+.bakucontainer {
+        flex-direction: row;
+        max-width: 850px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
 .table-container {
-    width: 100%;
+    width: 100% !important;
+    max-width: 430px !important;
     height: auto;
+    float: none !important;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.prevcontainer1{
+    display:flex;
+    flex-direction:column;
+    width: 100% !important;
+    height:20%;
+    margin-left: 0;
+    padding-top: 0;
+}
+
+.prevcontainer2{
+    width: 100% !important;
+    max-width: 900px;
+    margin-left: 0 !important;
+    padding-left: 0;
+}
+
+.prevcontainer3{
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0;
 }
 
 .row2 {
@@ -990,16 +1387,61 @@ summary {
 }
 
 .table {
-    width: auto; /* Allow the table to shrink to fit content */
-    overflow-x: auto;
+    width: 100%;
+    min-width: 650px;
+    table-layout: fixed;
     display: block;
-    }
+}
 
 .th, td {
     text-align: center; /* Center text horizontally */
     vertical-align: middle; /* Center text vertically */
     padding: 0; /* Remove cell padding */
-    }
+}
+}
+
+@media screen and (max-width: 700px) {
+.outer-container {
+    overflow: auto;
+    flex-direction: column;
+    border: none;
+}
+
+.container2 {
+    width: 100%;
+    height: auto;
+}
+
+.bakucontainer {
+    max-width: 850px;
+    height: auto;
+    flex-direction: column !important;
+    gap: 15px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.table-container {
+    width: 100% !important;
+    max-width: 430px !important;
+    height: auto;
+    float: none !important;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+}
+
+.row2 {
+    display: flex;
+}
+
+.table {
+    width: 100%;
+    min-width: 650px;
+    table-layout: fixed;
+    display: block;
+    overflow-x: auto;
+}
 
 .Type1 {
     margin-left:0;
@@ -1019,56 +1461,77 @@ summary {
     margin-bottom:15px;
 }
 
+.type3[open] {
+    padding: 10px;
+}
+
 .image-left{
-    width:60%;
+    width: 100% !important;
     height:100%;
     float:none;
     flex-wrap:wrap;
     flex-direction: row;
-    margin-left:20%;
-    margin-right:20%;
-    margin-top:5px;
-    margin-bottom: 5px;
+    margin: 10px auto;
     object-fit:contain;
     align-items:center;
+    overflow-x: auto;
 }
 
 .image-left img{
-    width:100%;
-    height:100%;
-}
-
-.prevcontainer1{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    height:20%;
-}
-
-.prevcontainer2{
-    width:100%;
-    padding-left:5px;
-}
-
-.prevcontainer3{
-    width:100%;
-    padding-left:5px;
-    margin-left:0;
+    width: 100%;
+    height: 100%;
 }
 
 .tg td{
     font-size:10px;
-    }
+}
 
 .tg th{
     font-size:11px;
-    }
+}
 
 .tg .tg-baqh{
-    max-width:140px;
-    }
+    width: 40px;
+}
 
 .tg .tg-amwm{
     max-width:140px;
+}
+
+.tg th img {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+}
+
+.item4 {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 20px;
+}
+
+/* Fix the "Bakugan Not Found" box */
+.bakucontainer > div:first-child {   /* the gray box */
+    width: 100% !important;
+    max-width: 850px;
+}
+
+.tg thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #7ab5a1;
+}
+}
+
+@media (max-width: 750px) {
+    .aboutcontainertxt,
+    .FAQscontainertxt,
+    .contactcontainertxt,
+    .sakuratxt,
+    .TGNtxt {
+        text-align: left;
+        line-height: 1.6;
+        font-size: 0.95rem;
     }
 }
