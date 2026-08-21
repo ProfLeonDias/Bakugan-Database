@@ -1535,14 +1535,3 @@ summary {
         font-size: 0.95rem;
     }
 }
-
-ins.adsbygoogle[data-ad-status="unfilled"] {
-  display: none !important;   /* optional: hide empty ones completely */
-}
-
-ins.adsbygoogle {
-  display: block;
-  min-height: 100px;   /* or 250px, 90px, etc. depending on the unit */
-  width: 100%;
-  background: transparent;
-}
