@@ -1536,9 +1536,7 @@ summary {
     }
 }
 
-ins.adsbygoogle {
-  min-height: 100px;
-  background: #f0f0f0; /* light gray so you can see where the unit is */
-  border: 1px dashed #ccc;
+ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;   /* optional: hide empty ones completely */
 }
 
