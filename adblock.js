@@ -5,32 +5,43 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Create a harmless test element.
-    const bait = document.createElement("div");
-
-    bait.className = "ad ads ad-banner ad-container";
-    bait.style.position = "absolute";
-    bait.style.left = "-9999px";
-    bait.style.width = "1px";
-    bait.style.height = "1px";
-
-    document.body.appendChild(bait);
-
-    // Give browser extensions a moment to react.
+    // Give AdSense time to initialize and render.
     setTimeout(function () {
 
-        const blocked =
-            bait.offsetParent === null ||
-            bait.offsetHeight === 0 ||
-            bait.offsetWidth === 0;
+        const ads = [...document.querySelectorAll(".adsbygoogle")];
 
-        bait.remove();
+        // No AdSense elements found.
+        if (ads.length === 0) {
+            showAdblockMessage();
+            return;
+        }
 
-        if (blocked) {
+        // Find AdSense ads that Google says are filled.
+        const filledAds = ads.filter(ad =>
+            ad.getAttribute("data-ad-status") === "filled"
+        );
+
+        // If Google hasn't finished processing the ads yet,
+        // don't incorrectly accuse the visitor of using an ad blocker.
+        if (filledAds.length === 0) {
+            return;
+        }
+
+        // Check whether at least one filled ad actually rendered.
+        const renderedAd = filledAds.some(ad => {
+
+            const rect = ad.getBoundingClientRect();
+
+            return rect.width > 0 && rect.height > 0;
+        });
+
+        // If Google says the ads are filled but none actually
+        // rendered, an ad blocker is very likely interfering.
+        if (!renderedAd) {
             showAdblockMessage();
         }
 
-    }, 1500);
+    }, 5000);
 });
 
 
