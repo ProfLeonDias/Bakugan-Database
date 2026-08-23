@@ -381,18 +381,21 @@ img {
         gap: 25px;
     }
     .item1 {
-        flex: 1 1 32%;
+        flex: 0 1 32%;
         max-width: 420px;
+        min-width: 0;
         order: 2;
     }
     .item2 {
-        flex: 1 1 68%;
+        flex: 1 1 0;
+        min-width: 0;
         order: 1;
     }
     .item2image {
         width: 80%;
         max-width: 100%;
         height: auto;                /* Taller on desktop */
+        object-fit: contain;
     }
 }
 
