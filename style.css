@@ -1538,3 +1538,20 @@ summary {
         font-size: 0.95rem;
     }
 }
+
+.ad-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 15px auto;
+}
+
+ins.adsbygoogle {
+    display: block;
+    width: 100%;
+    max-width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+}
